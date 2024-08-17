@@ -1,0 +1,73 @@
+/* stylelint-disable order/properties-order */
+@font-face {
+    font-family: Technology-Bold;
+    src: url('./fonts/Technology-Bold.ttf');
+}
+
+:root {
+    --main-bg-color: #1B244A;
+    --score-bg-color: #080001;
+    --score-color: #F94F6D;
+    --button: #9AABD8;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    font-family: Technology-Bold, sans-serif;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 500px;
+    text-align: center;
+}
+
+.container__item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.container__score {
+    background-color: var(--score-bg-color);
+	width: 150px;
+	height: 150px;
+	margin: 2em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.container__buttons {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    background-color: var(--main-bg-color);
+    border: 1px solid var(--button);
+    border-radius: 5px;
+    color: var(--button);
+    font-family: Technology-Bold, sans-serif;
+    font-size: 18px;
+    height: 45px;
+    margin: .25em;
+    width: 45px;
+}
+
+h2 {
+    color: var(--score-color);
+    font-size: 90px;
+	margin: 0;
+
+}
+
+h3 {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 40px;
+	margin-bottom: 0;
+}
