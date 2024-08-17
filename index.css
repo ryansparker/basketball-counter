@@ -19,19 +19,23 @@ body {
 
 .container {
     display: flex;
+	flex-direction: column;
     justify-content: space-around;
     margin: 0 auto;
     max-width: 500px;
     text-align: center;
 }
-
+.container__scores {
+	display: flex;
+	justify-content: center;
+}
 .container__item {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-.container__score {
+.container__score  {
     background-color: var(--score-bg-color);
 	width: 150px;
 	height: 150px;
@@ -39,15 +43,35 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	border-radius: .25em;
+	border: 3px solid transparent;
+}
+
+.highlight-lead {
+	border: 3px solid var(--score-color);
+	box-shadow: 0 0 0 0 rgba(249, 79, 109, 1);
+	animation: pulse-red 2s infinite;
+}
+@keyframes pulse-red {
+	0% {
+		box-shadow: 0 0 0 0 rgba(249, 79, 109, 0.7);
+	}
+
+	70% {
+		box-shadow: 0 0 0 10px rgba(249, 79, 109, 0);
+	}
+
+	100% {
+		box-shadow: 0 0 0 0 rgba(249, 79, 109, 0);
+	}
 }
 
 .container__buttons {
     display: flex;
     justify-content: center;
 }
-
 button {
-    background-color: var(--main-bg-color);
+	background-color: var(--main-bg-color);
     border: 1px solid var(--button);
     border-radius: 5px;
     color: var(--button);
@@ -56,8 +80,22 @@ button {
     height: 45px;
     margin: .25em;
     width: 45px;
+	transition: all .15s ease-in;
 }
 
+button:hover {
+	border: 1px solid var(--score-color);
+	transform: scale(1.05)
+}
+
+.container__button-new button {
+
+	height: fit-content;
+	width: fit-content;
+	padding: .5em .75em .4em .75em;
+	font-size: 30px;
+	margin-top: 2em;
+}
 h2 {
     color: var(--score-color);
     font-size: 90px;
